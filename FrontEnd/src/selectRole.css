@@ -1,0 +1,68 @@
+.rol-selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100vw;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #191516;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1.3rem;
+    color: #191516;
+    margin-bottom: 30px;
+  }
+  
+  .card-container {
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .rol-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 25px;
+    width: 250px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .rol-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .rol-icon {
+    font-size: 2.5rem;
+    color: #8D6A9F; /* Morado */
+    margin-bottom: 15px;
+  }
+  
+  .rol-card h3 {
+    margin: 10px 0 8px;
+    font-size: 1.3rem;
+    color: #191516;
+  }
+  
+  .rol-card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .rol-name{
+    color: #191516;
+  }

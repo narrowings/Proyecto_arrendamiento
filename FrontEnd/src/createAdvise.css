@@ -1,0 +1,283 @@
+/* Configuracion y dimensiones de toda la pagina */
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+/* Define el area que contiene todo el formulario */
+.create-advise-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url("../assets/casaAviso.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f4f4f4;
+}
+
+/* Organizacion del formulario y seleccion de imagenes */
+.create-advise-content {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  flex-wrap: wrap;
+}
+
+/* Diseño del formulario de crear aviso */
+.create-advise-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  width: 60%;
+  overflow: hidden;
+}
+
+/* Contenedor de seleccionar imagen */
+.create-advise-images-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  padding: 80px;
+  border: 2px dashed #ccc;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Efecto cuando el usuario arrastra una imagen */
+.create-advise-images-container.drag-over {
+  border-color: #4caf50;
+  background-color: #eaf7e5;
+}
+
+/* Oculta el input de imagen para que no parezca un boton normal */
+.create-advise-images-container input[type="file"] {
+  display: none;
+}
+
+/* Estilo del boton para subir imagnes */
+.create-advise-images-container button {
+  background-color: #ddd;
+  color: #333;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Efecto cuando pasamos el cursor por subir imagen */
+.create-advise-images-container button:hover {
+  background-color: #ccc;
+}
+
+/* Definimos el contenedor de la imagen principal */
+.main-image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Ajuste de la imagen principal  */
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contenedor de miniaturas */
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Estilo de cada miniatura */
+.thumbnail {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ajuste de la imagen en la miniatura */
+.thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* boton de eliminar imagen */
+.delete-img-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  padding: 5px 8px;
+  font-size: 12px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Efecto al pasar el cursor por el boton */
+.delete-img-btn:hover {
+  opacity: 1;
+  background-color: darkred;
+}
+
+/* Evita scroll en expansiones */
+.fixed-textarea {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  overflow: hidden;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+  background-color: white;
+}
+
+/* Estilo de condiciones adicionales */
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #8d6a9f; /* Bordes más destacados */
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: white;
+  cursor: pointer;
+  appearance: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group select:hover {
+  border-color: #5a3e7b;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #8d6a9f;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Efecto de enfoque */
+}
+
+/* Oculta condiciones adicionales hasta que se seleccione "Si" */
+.form-group.hidden {
+  display: none;
+}
+
+.radio-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Botón de crear aviso */
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #9a24aa;
+}
+
+/* Estilo para mensajes de error */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.negative-number-error {
+  font-weight: bold;
+  color: rgb(199, 8, 8);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .create-advise-content {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .create-advise-form {
+    width: 90%;
+  }
+
+  .create-advise-images-container {
+    width: 90%;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .create-advise-container {
+    padding: 8px;
+  }
+
+  .create-advise-content {
+    gap: 15px;
+  }
+
+  .create-advise-form,
+  .create-advise-images-container {
+    width: 100%;
+  }
+
+  .create-advise-images-container {
+    padding: 30px;
+  }
+
+  .fixed-textarea {
+    height: 100px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}

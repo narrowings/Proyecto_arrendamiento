@@ -1,0 +1,134 @@
+/* Contenedor general */
+.chat-container {
+  flex: 1;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  width: 100vw;
+}
+
+/* Header con el interlocutor */
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #8d6a9f;
+  background-color: #f8f5fb;
+}
+
+.chat-header-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+}
+
+.chat-header-name {
+  font-weight: bold;
+  color: #5a3e7b;
+  font-size: 1rem;
+}
+
+/* Lista de mensajes */
+.mensajes-list {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Cada mensaje */
+.mensajes-list .mi-mensaje,
+.mensajes-list .otro-mensaje {
+  max-width: 70%;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  word-wrap: break-word;
+}
+
+.mensajes-list .mi-mensaje {
+  background-color: #8d6a9f;
+  color: #fff;
+  margin-left: auto;
+}
+
+.mensajes-list .otro-mensaje {
+  background-color: #ffffff;
+  border: 2px solid #8d6a9f;
+  color: #333;
+  margin-right: auto;
+}
+
+.mensajes-list small {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: rgba(0,0,0,0.6);
+  text-align: right;
+}
+
+/* Formulario de envío */
+.chat-form {
+  display: flex;
+  border-top: 2px solid #8d6a9f;
+  padding: 0.5rem;
+  background-color: #f8f5fb;
+}
+
+.chat-form input[name="mensaje"] {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #8d6a9f;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  background-color: #fff;
+  color: #191516;
+}
+
+.chat-form button {
+  padding: 0.75rem 1rem;
+  background-color: #8d6a9f;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-form button:hover {
+  background-color: #6d4b7b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .chat-container {
+    margin: 1rem;
+  }
+
+  .mensajes-list .mi-mensaje,
+  .mensajes-list .otro-mensaje {
+    max-width: 90%;
+  }
+
+  .chat-form {
+    flex-direction: column;
+  }
+
+  .chat-form input[name="mensaje"] {
+    margin-right: 0;
+    margin-bottom: 0.5rem; 
+    width: 100%;
+  }
+
+  .chat-form button {
+    width: 100%;
+  }
+}

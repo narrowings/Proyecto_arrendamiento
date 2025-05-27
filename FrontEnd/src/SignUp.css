@@ -1,0 +1,158 @@
+/* Contenedor principal */
+.signup-container {
+  display: flex;
+  max-height: auto;
+  font-family: "Arial", sans-serif;
+}
+
+/* Panel izquierdo */
+.signup-left {
+  width: 80%;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: auto;
+}
+
+/* Botón de regreso (flecha) */
+
+/* Título principal */
+.title-container h1 {
+  font-size: 4rem;
+  color: #191516;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 2%;
+  text-align: left;
+}
+
+/* Contenedor de la descripción */
+.description-container p {
+  font-size: 1.5rem;
+  color: #191516;
+  margin: 3% 0 2%;
+  text-align: left;
+}
+
+/* Formulario */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 3%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 4%;
+}
+
+/* Etiquetas */
+.form-group label {
+  font-size: 1.1rem;
+  color: #191516;
+  margin-bottom: 1%;
+}
+
+/* Campos de entrada */
+.form-group input {
+  padding: 2%;
+  border: 2px solid #dadada;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #191516;
+  outline: none;
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+  border: 2px solid #7c588b;
+  background-color: #ffffff;
+}
+
+/* Botón de registro */
+.signup-form button[type="submit"] {
+  background-color: #8d6a9f;
+  color: white;
+  border: none;
+  padding: 2.5%;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 5%;
+}
+
+.signup-form button[type="submit"]:hover {
+  background-color: #7c588b;
+}
+
+
+.form-group select{
+  background-color: #ffffff;
+  color: #000000;
+  height: 40px;
+  border: 3px solid #8d6a9f;
+  border-radius: 4px;
+}
+
+/* Links de ayuda */
+.helper-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-top: 4%;
+}
+
+.helper-links a {
+  color: #8d6a9f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.helper-links a:hover {
+  text-decoration: underline;
+}
+
+/* Panel derecho (imagen) */
+.signup-image {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+contrasena-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.contrasena-wrapper input {
+  width: 100%;
+  color: #000000;
+}
+
+.toggle-contrasena {
+  position: absolute;
+  cursor: pointer;
+  color: #000000;
+  margin-left: -2%;
+  margin-top: 0.7%;
+}
+
+.error-text {
+  color: #fc0404;
+}

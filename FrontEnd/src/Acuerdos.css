@@ -1,0 +1,84 @@
+/* 1) Centro + ancho máximo del wrapper */
+.acuerdos-container {
+  width: 100vw;         /* antes max-width:1200px */
+  margin: 0;           /* elimina el centrado */
+  padding: 20px;
+}
+
+/* 2) Grid real en lugar de inline-block */
+.acuerdos-grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* una sola columna */
+  gap: 16px;
+
+}
+
+/* 3) Tarjetas que no ocupen 97vw y ocupen todo el ancho de su celda */
+.acuerdo-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 16px;
+  box-sizing: border-box;
+  width: 96vw;      /* llena la columna */
+  position: static;
+  margin: 0;
+}
+
+/* 4) Reset márgenes de tipografía interna */
+.acuerdo-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+}
+.acuerdo-card p {
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+/* 5) Contenedor de botones con gap */
+.acuerdo-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;       /* para pantallas pequeñas */
+}
+
+/* 6) Botones unificados en look/spacing */
+.acuerdo-actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-descargar {
+  background: #2196F3;
+}
+.btn-descargar:hover {
+  filter: brightness(90%);
+}
+.btn-calificar {
+  background: #4CAF50;
+}
+.btn-calificar:hover {
+  filter: brightness(90%);
+}
+.btn-modificar {
+  background: #8D6A9F;
+}
+.btn-modificar:hover {
+  filter: brightness(90%);
+}
+
+/* 7) Responsivo: tarjetas una columna, botones en bloque */
+@media (max-width: 600px) {
+  .acuerdos-grid {
+    grid-template-columns: 1fr;
+  }
+  .acuerdo-actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

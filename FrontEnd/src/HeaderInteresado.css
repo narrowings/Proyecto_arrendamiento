@@ -1,0 +1,58 @@
+/* src/components/HeaderInteresado.css */
+
+.header-interesado-container {
+  position: sticky;    /* Fija el header al hacer scroll */
+  top: 0;              /* Siempre pegado arriba */
+  z-index: 1000;       /* Para que quede encima de otros elementos */
+  background-color: #000000;
+  padding: 2.3rem;
+  border-bottom: 1px solid #444;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Sombra para distinguir del contenido al hacer scroll */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-interesado-left {
+  display: flex;
+  gap: 2rem;
+}
+
+.header-interesado-link {
+  text-decoration: none;
+  color: #f7f7f7;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+
+.header-interesado-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #f7f7f7;
+}
+
+@media (max-width: 768px) {
+  .header-interesado-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .header-interesado-left {
+    gap: 1rem;
+  }
+
+  .header-interesado-link {
+    font-size: 0.9rem;
+  }
+
+  .header-interesado-right {
+    font-size: 0.9rem;
+  }
+}

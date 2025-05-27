@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #191516;
+  overflow-x: hidden;
+  width: 100%;
+  font-size: 18px; /* Tamaño base un poco más grande */
+}
+
+/* Header */
+.header {
+  background: #191516;
+  color: white;
+  padding: 20px;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.nav-container ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-container li {
+  margin: 0 15px;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* Home screen */
+.home-screen {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2%;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.text-container {
+  flex: 1;
+  min-width: 300px;
+  padding: 10px;
+  text-align: left;
+}
+
+.text-container h1 {
+  font-size: 4rem;
+  color: #191516;
+}
+
+.text-container p {
+  font-size: 2rem;
+  color: #c3baaa;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+  font-size: 1.6rem;
+}
+
+.stats span {
+  color: #949fff;
+  font-weight: normal;
+}
+
+/* Imagenes derechas del texto */
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  flex: 1;
+  min-width: 300px;
+  padding: 10px;
+}
+
+.image-container img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Sección con input */
+.image-container-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  background-color: #191516;
+  color: #ffffff;
+  padding: 20px 5%;
+}
+
+.new-section {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.new-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.new-section input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  background-color: #ffffff;
+  color: #191516;
+}
+
+/* Grid de casas */
+.houses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 5%;
+  width: 100%;
+}
+
+.house-item {
+  text-align: center;
+  color: #ffffff;
+}
+
+.house-item img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  aspect-ratio: 4 / 3;
+}
+
+.house-item p {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .home-screen {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .image-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .houses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+  }
+
+  .nav-container ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-container li {
+    margin: 10px 0;
+  }
+
+  .home-screen {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-container {
+    text-align: center;
+    width: 100%;
+  }
+
+  .image-container {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .houses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .house-item p {
+    font-size: 1.2rem;
+  }
+
+  .new-section h2 {
+    font-size: 1.5rem;
+  }
+}

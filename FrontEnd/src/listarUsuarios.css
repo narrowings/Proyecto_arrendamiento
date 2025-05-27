@@ -1,0 +1,32 @@
+.listar-usuarios-container {
+  padding: 20px;
+}
+
+.listar-usuarios-title {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.listar-usuarios-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.listar-usuarios-tabla th,
+.listar-usuarios-tabla td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.listar-usuarios-tabla thead tr {
+  background-color: #191516;
+  color: #fff;
+}
+
+.sin-usuarios {
+  text-align: center;
+}

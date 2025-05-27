@@ -1,0 +1,51 @@
+.verificacion-container {
+  height: 50vw;
+  width: 100vw;
+  background-color: #F9F9F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.verificacion-box {
+  background-color: #FFFFFF;
+  border-radius: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.verificacion-box h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #191516;
+}
+
+.verificacion-box p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 1rem;
+}
+
+.verificacion-box .lottie-icon {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 1rem auto;
+}
+
+@media (max-width: 600px) {
+  .verificacion-box {
+    padding: 2rem 1rem;
+  }
+
+  .verificacion-box .lottie-icon {
+    width: 220px;
+    height: 220px;
+  }
+}

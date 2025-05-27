@@ -1,0 +1,249 @@
+.login-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Arial", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Contenedor izquierdo del formulario */
+.login-left {
+  width: 60%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* 💡 Centramos el contenido horizontalmente */
+  text-align: center; /* Alineamos el texto */
+  box-sizing: border-box;
+}
+
+/* Título principal */
+.title-container h1 {
+  font-size: 4rem;
+  color: #191516;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  text-align: left;
+}
+
+/* Descripción */
+.description-container p {
+  font-size: 1.5rem;
+  color: #191516;
+  margin: 1rem 0 0.5rem;
+  text-align: left;
+}
+
+/* Texto "Ingresa con tu cuenta" */
+.login-label {
+  font-size: 1.5rem;
+  color: #191516;
+  text-align: left;
+  font-weight: bold;
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+/* Botón de Google */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #191516;
+  padding: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+  align-self: center; /* 💡 Centrado en el contenedor padre */
+  margin-bottom: 1rem;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  align-self: center; /* 💡 Centrado en el padre */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+form label {
+  font-size: 1.2rem;
+  color: #191516;
+  margin-bottom: 0.4rem;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  padding: 0.6rem;
+  border: 2px solid #8d6a9f;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  background-color: #7c588b;
+  color: rgb(0, 0, 0);
+}
+
+/* Links de ayuda */
+.helper-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.helper-links a {
+  color: #8d6a9f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.helper-links a:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox "Recordarme" */
+.remember-me {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 0.5rem 0;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+}
+
+.remember-me label{
+  font-weight: normal;
+}
+
+/* Botón login */
+.login-btn {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  background-color: #8d6a9f;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.login-btn:hover {
+  background-color: #7c588b;
+}
+
+/* Registro */
+.register-section {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.register-section h1 {
+  color: #8d6a9f;
+  font-weight: bold;
+}
+
+.register-section a:hover {
+  text-decoration: underline;
+}
+
+/* Panel derecho con imagen */
+.login-right {
+  width: 40%;
+  height: auto;
+  background-color: #ff0000;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.login-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1024px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left,
+  .login-right {
+    width: 100%;
+    height: auto;
+  }
+
+  .login-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .google-btn,
+  form {
+    margin: 0 auto;
+  }
+
+  .login-image {
+    height: 300px;
+  }
+
+  .title-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .description-container p,
+  .login-label {
+    font-size: 1.2rem;
+  }
+}
+
+.contrasena-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.contrasena-wrapper input {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.toggle-contrasena {
+  position: absolute;
+  margin-bottom: -1%;
+  right: 10px;
+  cursor: pointer;
+}

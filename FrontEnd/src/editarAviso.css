@@ -1,0 +1,191 @@
+/* Asegura que el body ocupe toda la altura de la ventana y tenga el fondo negro */
+body.editar-body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/casaAviso.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Asegura que el contenedor no tenga un fondo que tape el fondo del body */
+.editar-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start; /* empiezan arriba en lugar de en el centro */
+  padding: 20px;
+}
+
+/* Sección del formulario */
+.editar-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  background-color: transparent;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Título del formulario */
+.editar-form-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #8d6a9f;
+}
+
+/* Estructura del formulario */
+.editar-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Estilos generales para los inputs, textarea y selects */
+.editar-form label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* input de titulo del formulario */
+.editar-form input[name="titulo"] {
+  background-color: #ffffff;
+  border: 2px solid #8d6a9f;
+  border-radius: 0.5rem;
+}
+
+/* Estilos para los inputs, textarea, y selects */
+.editar-form input,
+.editar-form textarea,
+.editar-form select {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 2px solid #8d6a9f;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #191516;
+  transition: border-color 0.3s ease;
+}
+
+/* Placeholder del textarea */
+.editar-form input::placeholder,
+.editar-form textarea::placeholder {
+  color: #ffffff;
+  font-style: italic;
+}
+
+/* Estilos para los selects (Estado y Condiciones Adicionales) */
+.editar-form select {
+  cursor: pointer;
+  appearance: none;
+  background-color: white;
+}
+
+.editar-form select:hover {
+  border-color: #5a3e7b;
+}
+
+.editar-form select:focus {
+  outline: none;
+  border-color: #8d6a9f;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Condiciones adicionales, ocultas hasta que se selecciona "Sí" */
+.editar-form .condiciones-adicionales.hidden {
+  display: none;
+}
+
+/* Estilos del botón para subir imágenes */
+.editar-form input[type="file"] {
+  background-color: #ffffff;
+  border: 1px solid #8d6a9f;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: #191516;
+  cursor: pointer;
+}
+
+/* Botón de volver a mis avisos */
+.editar-form button {
+  padding: 0.75rem;
+  background-color: #8d6a9f;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editar-form button:hover {
+  background-color: #6d4b7b;
+}
+
+/* Sección de la imagen */
+.editar-image-section {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.editar-image-section img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Mensajes de error */
+.error-msg {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  visibility: visible;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Para pantallas pequeñas, ajustamos las columnas */
+  .editar-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .editar-form-section {
+    padding: 2rem;
+  }
+
+  .editar-form {
+    max-width: 90%;
+  }
+
+  .editar-image-section {
+    padding: 1rem;
+    max-width: 90%;
+  }
+
+  .editar-image-section img {
+    max-width: 100%;
+  }
+}

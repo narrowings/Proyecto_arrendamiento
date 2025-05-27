@@ -1,0 +1,29 @@
+/* Asegúrate de que html, body y #root lleguen al 100% */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Wrapper de toda la página de chat */
+.chat-page-container {
+  display: flex;
+  height: 100vh;           /* toda la altura de la ventana */
+  overflow: hidden;
+  width: 100vw;        /* evitar scroll general */
+}
+
+/* Panel izquierdo: lista de conversaciones */
+.conversaciones-panel {
+  width: 280px;            /* o el ancho que prefieras */
+  border-right: 1px solid #ddd;
+  overflow-y: auto;        /* scroll si la lista crece */
+}
+
+/* Panel derecho: el chat */
+.chat-panel {
+  flex: 1;                 /* ocupa el resto */
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100vw;        /* el scroll será interno */
+}

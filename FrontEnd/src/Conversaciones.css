@@ -1,0 +1,95 @@
+/* Body específico para la lista de conversaciones */
+body.conversaciones-body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/casaAviso.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.conversaciones-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.conversacion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #8d6a9f;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: inherit;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.conversacion-item:hover {
+  border-color: #5a3e7b;
+  background-color: #f8f5fb;
+}
+
+/* Info principal: título y interlocutor */
+.conversacion-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor del avatar y nombre */
+.interlocutor {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.conversacion-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.conversacion-name {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.conversacion-item strong {
+  color: #8d6a9f;
+}
+
+.conversacion-item .fecha {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .conversaciones-container {
+    padding: 0.5rem;
+    margin: 1rem auto;
+  }
+
+  .conversacion-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .conversacion-item .fecha {
+    margin-top: 0.5rem;
+  }
+}

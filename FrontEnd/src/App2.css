@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #191516;
+}
+
+.header-2 {
+  background: #191516;
+  color: white;
+  padding: 2% 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.header-left {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex: 1;
+}
+
+.header-left-item {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.header-right {
+  font-size: 1rem;
+  text-align: right;
+  flex: 1;
+}
+
+.header-right svg {
+  position: relative;
+  top: 4px; /* Ajusta esto si es necesario: 1px o 3px */
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  gap: 2%;
+  font-weight: bold;
+}
+
+.header ul li {
+  cursor: pointer;
+}
+
+/* HOME SCREEN */
+.home-screen {
+  display: flex;
+  padding: 2%;
+  padding-bottom: 0;
+  justify-content: space-between;
+  background: #ffffff;
+}
+
+.text-container h1 {
+  font-size: 2.5rem;
+  color: #191516;
+}
+
+.text-container p {
+  font-size: 1.75rem;
+  color: #c3baaa;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.stats span {
+  color: #949fff;
+  font-weight: normal;
+}
+
+.container {
+  height: auto;
+  display: block;
+  padding: 2%;
+  background-color: white;
+}
+
+/* IMÁGENES ARRIBA */
+.image-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2%;
+  margin-bottom: 0;
+}
+
+.image-container img {
+  border-radius: 10px;
+  width: 45%;
+  height: auto;
+}
+
+/* NUEVA SECCIÓN */
+.image-container-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 3%;
+  background-color: #191516;
+  color: rgb(255, 255, 255);
+  padding-top: 1%;
+}
+
+.new-section {
+  width: 100%;
+  max-width: 90%;
+}
+
+.new-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1%;
+  color: #ffffff;
+}
+
+.new-section input {
+  width: 80%;
+  max-width: 400px;
+  padding: 1%;
+  margin-bottom: 5%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #191516;
+}
+
+/* CASAS GRID */
+.houses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3%;
+  padding: 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.image-grid {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.house-item {
+  text-align: center;
+  color: #ffffff;
+}
+
+.house-item img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+}
+
+.house-item p {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+}
