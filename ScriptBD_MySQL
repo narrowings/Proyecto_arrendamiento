@@ -1,0 +1,134 @@
+CREATE TABLE usuarios (
+    idUsuarios INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    nombreUsuario VARCHAR(100) NOT NULL UNIQUE,
+    contrasena VARCHAR(100) NOT NULL,
+    telefono VARCHAR(10),
+    palabraSecreta VARCHAR(100) ,
+    rol ENUM('Interesado', 'Propietario', 'Administrador'),
+    fotoPerfil VARCHAR(255),
+    verificationToken VARCHAR(255),
+    tokenCreationDate DATETIME,
+    enabled BOOLEAN DEFAULT FALSE,
+    recoveryToken VARCHAR(255),
+	recoveryTokenCreationDate DATETIME
+);
+
+CREATE TABLE espacios (
+    idEspacios INT AUTO_INCREMENT PRIMARY KEY,
+    idUsuarios INT NOT NULL,
+    titulo VARCHAR(100) NOT NULL,
+    tipo ENUM('apartamento', 'casa', 'parqueadero', 'bodega', 'habitacion') NOT NULL,
+    estrato INT NOT NULL,
+    torre VARCHAR(50) NULL,
+    apto VARCHAR(50) NULL,
+    habitacion VARCHAR(50) NULL,
+    numero_casa VARCHAR(50) NULL,
+    parqueadero VARCHAR(50) NULL,
+    bodega VARCHAR(50) NULL,
+    CONSTRAINT fk_espacios_usuarios
+        FOREIGN KEY (idUsuarios)
+        REFERENCES usuarios(idUsuarios)
+        ON DELETE CASCADE,
+        
+	-- Unicidades:
+    UNIQUE KEY ux_apto_por_tipo      (tipo, apto),
+    UNIQUE KEY ux_habitacion_por_tipo(tipo, habitacion),
+    UNIQUE KEY ux_numero_casa        (numero_casa),
+    UNIQUE KEY ux_parqueadero       (parqueadero),
+    UNIQUE KEY ux_bodega            (bodega)
+);
+
+CREATE TABLE avisos (
+    idAvisos INT AUTO_INCREMENT PRIMARY KEY,
+    idEspacios INT NOT NULL,
+    titulo VARCHAR(100) NOT NULL,
+    descripcion VARCHAR(500) NOT NULL,
+    precio DOUBLE NOT NULL,
+    condicionesAdicionales VARCHAR(500),
+    imagenes VARCHAR(2000) NOT NULL,
+    estado ENUM('disponible', 'ocupado', 'en revision') NOT NULL,
+    creado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    actualizado TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_avisos_espacios FOREIGN KEY (idEspacios)
+        REFERENCES espacios(idEspacios)
+        ON DELETE CASCADE,
+    CONSTRAINT unique_idEspacios UNIQUE (idEspacios)
+);
+
+CREATE TABLE denuncias (
+    idDenuncias INT AUTO_INCREMENT PRIMARY KEY,
+    idAvisos INT NOT NULL,
+    idUsuarios INT NOT NULL,
+    razon VARCHAR(255) NOT NULL,
+    comentario VARCHAR (500),
+    creado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (idAvisos) REFERENCES avisos(idAvisos) ON DELETE CASCADE,
+    FOREIGN KEY (idUsuarios) REFERENCES usuarios(idUsuarios) ON DELETE CASCADE
+);
+
+CREATE TABLE acuerdoArrendamiento (
+    idAcuerdoArrendamiento INT PRIMARY KEY AUTO_INCREMENT,
+    idEspacios INT NOT NULL,
+    idUsuarios INT NOT NULL,
+    fechaInicio DATE NOT NULL,
+    fechaFin DATE NOT NULL,
+    estado ENUM('activo', 'finalizado', 'cancelado') NOT NULL,
+    contratoPdf LONGBLOB,
+    calificacionEspacio INT DEFAULT NULL,
+    comentarioEspacio VARCHAR(255) DEFAULT NULL,
+    calificacionUsuario INT DEFAULT NULL,
+    comentarioUsuario VARCHAR(255) DEFAULT NULL,
+    FOREIGN KEY (idEspacios) REFERENCES espacios(idEspacios) ON DELETE CASCADE,
+    FOREIGN KEY (idUsuarios) REFERENCES usuarios(idUsuarios) ON DELETE CASCADE
+);
+
+CREATE TABLE conversaciones (
+    idConversacion INT AUTO_INCREMENT PRIMARY KEY,
+    idAvisos INT NOT NULL,
+    idUsuarios INT NOT NULL,
+    estado VARCHAR(255) NOT NULL,
+    creado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT fk_conversaciones_avisos
+        FOREIGN KEY (idAvisos) 
+        REFERENCES avisos(idAvisos)
+        ON DELETE CASCADE,
+    
+    CONSTRAINT fk_conversaciones_usuarios
+        FOREIGN KEY (idUsuarios) 
+        REFERENCES usuarios(idUsuarios)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE mensajes (
+    idMensaje INT AUTO_INCREMENT PRIMARY KEY,
+    idConversacion INT NOT NULL,
+    idUsuarios INT NOT NULL,
+    contenido VARCHAR(1000) NOT NULL,
+    visto BOOLEAN NOT NULL DEFAULT FALSE,
+    creado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_mensajes_conversaciones
+        FOREIGN KEY (idConversacion)
+        REFERENCES conversaciones(idConversacion)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_mensajes_usuarios
+        FOREIGN KEY (idUsuarios)
+        REFERENCES usuarios(idUsuarios)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE notificaciones (
+    idNotificaciones INT PRIMARY KEY AUTO_INCREMENT,
+    idMensaje INT,
+    idAvisos INT,
+    idUsuarios INT NOT NULL,
+    descripcion VARCHAR(1000),
+    leido BOOLEAN DEFAULT FALSE,
+    creado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (idMensaje) REFERENCES mensajes(idMensaje) ON DELETE CASCADE,
+    FOREIGN KEY (idUsuarios) REFERENCES usuarios(idUsuarios) ON DELETE CASCADE
+);
